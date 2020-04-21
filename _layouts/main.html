@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{site.title}}</title>
+
+</head>
+<body>
+	<div class="site">
+		<header class="site-header">
+			<h1 class="site-title">
+				<a href="/">{{site.title}}</a>
+			</h1>
+
+			<nav>
+				<ul>
+					
+					{% for page in site.pages %}
+					{% if page.title %}
+					  <li>
+						<a href="{{ page.url }}">{{ page.title }}</a>
+					  </li>
+					{% endif %}
+					{% endfor %}
+					
+				</ul>
+			</nav>
+			
+		</header>
+		<main class="site-main">
+
+			{% if page.title %}
+			<p>{{page.title}}</p>
+			{% endif %}
+
+			<section>
+				<header>
+					<h1>Posts</h1>
+				</header>
+				<div class="content">
+					<ul>
+						{% for post in site.posts %}
+						  <li>
+							<a href="{{ post.url }}">{{ post.title }}</a>
+						  </li>
+						{% endfor %}
+					</ul>
+				</div>
+			</section>
+
+		</main>
+		<aside class="site aside">
+
+		</aside>
+		<footer class="site-footer">
+
+		</footer>
+		<p>All rights reserved <b>&copy; Blajka</b>  </p>
+	</div>
+</body>
+</html>
